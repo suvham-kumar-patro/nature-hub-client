@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <form (ngSubmit)="Login()" #loginForm="ngForm" class="card p-3 mt-3">
+        
+        <div>
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            id="username"
+            [(ngModel)]="username"
+            name="username"
+            class="form-control"
+            #usernameField="ngModel"
+            required
+          />
+          <div *ngIf="usernameField.invalid && (usernameField.dirty || usernameField.touched)" class="text-danger">
+            <small *ngIf="usernameField.errors?.['required']">Username is required.</small>
+          </div>
+        </div>
+        
+        <div class="my-2">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            class="form-control"
+            #passwordField="ngModel"
+            required
+            minlength="5"
+            maxlength="10"
+          />
+          <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)" class="text-danger">
+            <small *ngIf="passwordField.errors?.['required']">Password is required.</small>
+            <small *ngIf="passwordField.errors?.['minlength']">Password must be at least 5 and atmost 10 characters long.</small>
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+  </div>  

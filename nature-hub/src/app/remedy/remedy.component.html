@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Natural Remedies</h1>
+  
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let remedy of remedies">
+        <div class="card shadow-lg rounded-lg remedy-card">
+          <!-- Optional image to display remedy image -->
+          <!-- <img src="https://via.placeholder.com/150" class="card-img-top" alt="{{ remedy.RName }}"> -->
+          <div class="card-body">
+            <h5 class="card-title">{{ remedy.RName }}</h5>
+            <p class="card-text">
+              <strong>Description:</strong> {{ remedy.RDescription }} <br>
+              <strong>Benefits:</strong> {{ remedy.RBenefits }} <br>
+              <strong>Preparation:</strong> {{ remedy.RPreparationMethod }} <br>
+              <strong>Usage Instructions:</strong> {{ remedy.RUsageInstructions }}
+            </p>
+            <!-- Optional buttons -->
+            <!-- <button class="btn btn-danger" (click)="deleteRemedy(remedy.RId)">Delete</button>
+            <button class="btn btn-success" (click)="updateRemedy()">Update</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

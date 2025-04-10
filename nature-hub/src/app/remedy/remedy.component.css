@@ -1,0 +1,86 @@
+/* Container for remedies */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Title styling */
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  
+  /* Card Styling */
+  .remedy-card {
+    border: none;
+    border-radius: 15px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+  }
+  
+  .remedy-card:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  
+  .card-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.6rem;
+    color: #27ae60;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #34495e;
+    line-height: 1.6;
+  }
+  
+  .card-text strong {
+    color: #2c3e50;
+    font-weight: bold;
+  }
+  
+  .card-text br {
+    margin-bottom: 5px;
+  }
+  
+  /* Responsive Styling for Different Screen Sizes */
+  @media (max-width: 768px) {
+    .card {
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container {
+      padding: 10px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .card-title {
+      font-size: 1.4rem;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }
+  

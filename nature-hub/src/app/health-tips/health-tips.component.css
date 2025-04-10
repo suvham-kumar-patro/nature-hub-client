@@ -1,0 +1,122 @@
+/* Container styling */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Tips List Layout */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;  /* Ensures the tips list and description stay at the top */
+}
+
+/* Styling for health tips list */
+.tips-list {
+    width: 30%;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Each health tip button */
+.tip-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    text-align: left;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+.tip-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-5px); /* Lift the button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the selected health tip description */
+.selected-tip-description {
+    width: 65%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f4f4f9; /* Light background color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For positioning close button */
+    max-width: 100%;  /* Ensure it adapts to the container's size */
+    min-height: 100px;  /* Ensure the box has a minimum height */
+    box-sizing: border-box; /* Prevent padding from affecting layout */
+}
+
+/* Close button styling (Top-right corner) */
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #007bff; /* Blue color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Close button hover effect */
+.btn-close:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Title and text inside the description */
+.selected-tip-description h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.selected-tip-description p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Make both cards equal height */
+.tips-list, .selected-tip-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Responsiveness for small screens */
+@media screen and (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tips-list {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .selected-tip-description {
+        width: 100%;
+    }
+}

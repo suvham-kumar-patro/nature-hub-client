@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h2>Health Tips</h2>
+    <div class="d-flex">
+     <!-- Health Tips List  -->
+      <div class="tips-list">
+        <ul class="list-group">
+          <li *ngFor="let tip of healthTips" class="list-group-item">
+            <button class="btn btn-primary tip-btn" type="button" (click)="onSelectedHealthTip(tip)">
+              {{ tip.HName }}
+            </button>
+          </li>
+        </ul>
+      </div>
+   
+      <!-- Description of the selected Health Tip -->
+      <div *ngIf="selectedHealthTip" class="selected-tip-description mt-4">
+        <h3>{{ selectedHealthTip.HName }}</h3>
+        <p><strong>Category:</strong> {{ selectedHealthTip.HCategory }}</p>
+        <p><strong>Description:</strong> {{ selectedHealthTip.HDescription }}</p>
+        <button type="button" class="btn-close" aria-label="Close" (click)="onDeselectHealthTip()">close</button>
+      </div>
+    </div>
+  </div>
+   
+ 

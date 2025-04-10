@@ -1,0 +1,33 @@
+<div class="nav-container d-flex justify-content-between align-items-center">
+    <ul class="nav nav-tabs custom-nav mb-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">
+          <i class="fas fa-leaf"></i> <b>NATURE-HUB</b>
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="/remedy" *ngIf="value">Remedy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/HealthTips"  *ngIf="value">Health Tips</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Shopping"  *ngIf="value">Shopping</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/Cart">Cart</a>
+      </li> -->
+    </ul>
+  
+    <!-- Button container aligned to the right -->
+    <div class="button-container">
+      <button class="btn btn-primary me-2" (click)="navigateToLogin()" *ngIf="!value">Login</button>
+      <button class="btn btn-secondary" (click)="navigateToRegister()" *ngIf="!value">Register</button>
+      <button class="btn btn-secondary" *ngIf="value" (click)="logout()">Logout</button>
+  
+    </div>
+  </div>
+  

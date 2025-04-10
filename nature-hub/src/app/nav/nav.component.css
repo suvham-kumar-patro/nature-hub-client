@@ -1,0 +1,116 @@
+/* Main Navbar container */
+.nav-container {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 30px; /* Space below the navbar */
+  }
+  
+  /* Custom Navbar Styling */
+  .custom-nav {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .custom-nav .nav-item {
+    margin-right: 20px; /* Space between nav items */
+  }
+  
+  .custom-nav .nav-link {
+    color: white; /* White text */
+    font-size: 1.1rem; /* Slightly larger text */
+    text-transform: uppercase;
+    font-weight: 600; /* Slightly bolder text */
+    letter-spacing: 1px;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .custom-nav .nav-link i {
+    margin-right: 8px; /* Space between the icon and the text */
+    font-size: 1.3rem;
+  }
+  
+  /* Active link style */
+  .custom-nav .nav-link.active {
+    background-color: #388E3C; /* Darker green for active links */
+    border-radius: 5px;
+    color: white;
+  }
+  
+  /* Hover effect for nav links */
+  .custom-nav .nav-link:hover {
+    background-color: #45A049; /* Slightly lighter green on hover */
+    color: white;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+  }
+  
+  /* Hover effect for icons */
+  .custom-nav .nav-link:hover i {
+    transform: rotate(10deg); /* Rotate icon on hover */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Button Container Styling */
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Button Styling */
+  .button-container .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px; /* Rounded buttons */
+    transition: all 0.3s ease;
+  }
+  
+  .button-container .btn-primary {
+    background-color: #007bff; /* Blue color for login button */
+    color: white;
+    border: none;
+  }
+  
+  .button-container .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+  }
+  
+  .button-container .btn-secondary {
+    background-color: #6c757d; /* Grey color for register button */
+    color: white;
+    border: none;
+    margin-left: 10px;
+  }
+  
+  .button-container .btn-secondary:hover {
+    background-color: #5a6268; /* Darker grey on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Optional Responsive Design for Small Screens */
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column; /* Stack navbar items on small screens */
+      align-items: center;
+    }
+    
+    .custom-nav {
+      flex-direction: column;
+    }
+    
+    .custom-nav .nav-item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    .button-container {
+      justify-content: center;
+      margin-top: 15px;
+    }
+  }
+  
