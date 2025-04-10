@@ -1,1 +1,27 @@
-<p>shopping works!</p>
+<div class="container mt-5">
+    <!-- Header with "Go to Cart" Link -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1>Products</h1>
+      <!-- Cart Link -->
+      <a [routerLink]="['/Cart']" class="cart-link btn btn-primary">
+        <i class="fas fa-shopping-cart"></i> Go to Cart
+      </a>
+    </div>
+  
+    <!-- Products List -->
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let product of products">
+        <div class="card product-card">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.PName }}</h5>
+            <p class="card-text">
+              <strong>Price:</strong> {{ product.PPrice | currency }} <br>
+              <strong>Description:</strong> {{ product.PDescription }} <br>
+            </p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

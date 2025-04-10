@@ -31,7 +31,7 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [provideHttpClient(withFetch(), withInterceptorsFromDi()),{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },],
   bootstrap: [AppComponent]

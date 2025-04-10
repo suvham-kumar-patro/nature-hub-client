@@ -1,130 +1,118 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fb; /* Soft light background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0; /* Remove margin to ensure body stretches fully */
-  }
-  
-  /* Styling for the parent container */
+/* Reset and center everything */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+}
+
+/* Full-page flexbox to center the form */
+.page-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the parent container */
+.parent {
+  width: 100%;
+  max-width: 450px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Title of the form */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+/* Styling for each input group */
+.input-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input field styling */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #4caf50;
+}
+
+/* Submit button styling */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Link to login */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.register-link .link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.register-link .link:hover {
+  color: #388e3c;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
   .parent {
-    width: 100%;
-    max-width: 450px; /* Limit width for a better layout */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 30px;
+    padding: 20px;
+    width: 90%;
   }
-  
-  /* Styling for the form container */
-  .box {
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  /* Title of the form */
+
   .title {
-    text-align: center;
-    font-size: 2rem;
-    color: #4caf50; /* Fresh green color */
-    margin-bottom: 20px;
+    font-size: 1.5rem;
   }
-  
-  /* Styling for each input group */
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
-  /* Label styling */
-  .label {
-    display: block;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #333;
-  }
-  
-  /* Input field styling */
+
   .input-field {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: border 0.3s ease;
-  }
-  
-  /* Focus effect for input fields */
-  .input-field:focus {
-    border-color: #4caf50; /* Change border color on focus */
-  }
-  
-  /* Styling for the submit button */
-  .submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #4caf50; /* Green button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover effect for the submit button */
-  .submit-btn:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
-  }
-  
-  /* Link for login */
-  .register-link {
-    text-align: center;
-    margin-top: 20px;
     font-size: 0.9rem;
   }
-  
-  /* Styling for the login link */
-  .register-link .link {
-    color: #4caf50;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+
+  .submit-btn {
+    font-size: 1rem;
   }
-  
-  /* Hover effect for the login link */
-  .register-link .link:hover {
-    color: #388e3c; /* Darker green on hover */
-  }
-  
-  /* Media query for responsiveness */
-  @media (max-width: 480px) {
-    .parent {
-      padding: 20px;
-      width: 90%; /* Make the form take up more space on small screens */
-    }
-  
-    .title {
-      font-size: 1.5rem; /* Adjust font size for smaller screens */
-    }
-  
-    .input-field {
-      font-size: 0.9rem;
-    }
-  
-    .submit-btn {
-      font-size: 1rem;
-    }
-  }
-  
+}

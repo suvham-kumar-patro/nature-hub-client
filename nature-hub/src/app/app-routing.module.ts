@@ -7,15 +7,16 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'remedy',component:RemedyComponent},
-  {path:'HealthTips',component:HealthTipsComponent},
-  {path:'Shopping',component:ShoppingComponent},
-  {path:'Cart',component:CartComponent},
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  { path: '', component: HomeComponent },
+  { path: 'remedy', component: RemedyComponent, canActivate: [AuthGuard] },
+  { path: 'HealthTips', component: HealthTipsComponent, canActivate: [AuthGuard] },
+  { path: 'Shopping', component: ShoppingComponent, canActivate: [AuthGuard] },
+  { path: 'Cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
