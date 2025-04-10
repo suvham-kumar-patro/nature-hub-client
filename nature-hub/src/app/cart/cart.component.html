@@ -18,6 +18,14 @@
         <div class="card cart-item-card">
           <div class="card-body">
             <div class="row">
+              <div class="col-md-3">
+                <img
+                  *ngIf="item.Product?.PImageUrl"
+                  [src]="item.Product.PImageUrl"
+                  class="img-fluid rounded"
+                  alt="{{ item.Product?.PName }}"
+                />
+              </div>
               <div class="col-md-8">
                 <h5 class="card-title">{{ item.Product?.PName }}</h5>
                 <p class="card-text">{{ item.Product?.PDescription }}</p>
@@ -25,8 +33,8 @@
                 <p><strong>Total:</strong> {{ item.Product?.PPrice * item.Quantity | currency }}</p>
               </div>
               <div class="col-md-4 text-end">
-                <!-- Remove button (uncomment when implemented) -->
-                <!-- <button class="btn btn-danger btn-sm" (click)="removeFromCart(item.cartItemId)">Remove</button> -->
+                <!-- Remove button-->
+                <button class="btn btn-danger btn-sm" (click)="removeFromCart(item.CartItemId)">Remove</button>
               </div>
             </div>
           </div>
@@ -35,8 +43,9 @@
     </div>
   
     <div class="mt-4">
-      <!-- Proceed to Checkout Button (uncomment when implemented) -->
-      <!-- <button class="btn btn-primary" (click)="checkout()">Proceed to Checkout</button> -->
+      <button class="btn btn-primary" (click)="checkout()" [disabled]="cartItems.length === 0">
+        Proceed to Checkout
+      </button>
     </div>
   </div>
   

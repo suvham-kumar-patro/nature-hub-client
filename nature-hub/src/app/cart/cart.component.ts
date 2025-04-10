@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../models/cart.model';
 import { ShoppingService } from '../services/shooping.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,7 @@ import { ShoppingService } from '../services/shooping.service';
 })
 export class CartComponent implements OnInit{
   cartItems:Cart[]=[]
-  constructor(private shoppingService: ShoppingService) {}
+  constructor(private router: Router, private shoppingService: ShoppingService) {}
   ngOnInit() {
     this.getCartItems();
   }
@@ -33,4 +34,18 @@ export class CartComponent implements OnInit{
       }
     );
    }
+
+   removeFromCart(cartItemId: number) {
+    if (confirm('Are you sure you want to remove this item from the cart?')) {
+      this.shoppingService.removeFromCart(cartItemId).subscribe(() => {
+        alert('Item removed from cart.');
+        this.getCartItems(); // Refresh list
+      });
+    }
+  }
+
+  checkout() {
+    alert('Proceeding to checkout...');
+    this.router.navigate(['/Shopping']);
+  }
 }

@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   showRedirectMessage: boolean = false;
+  captchaToken: string | null = null;
 
   constructor(
     private autService: AuthService,
@@ -29,7 +30,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onCaptchaResolved(token: string) {
+    this.captchaToken = token;
+    console.log('CAPTCHA resolved:', token);
+  }
+
   Login() {
+    if (!this.captchaToken) {
+      alert('Please complete the CAPTCHA.');
+      return;
+    }
+    
     const data = {
       UName: this.username,
       UPassword: this.password

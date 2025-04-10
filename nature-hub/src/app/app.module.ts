@@ -14,6 +14,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { JwtInterceptorService } from './services/jwt.interceptor.service';
 import { CommonModule } from '@angular/common';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    RecaptchaModule,
   ],
   providers: [provideHttpClient(withFetch(), withInterceptorsFromDi()),{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },],
   bootstrap: [AppComponent]

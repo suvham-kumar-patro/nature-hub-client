@@ -3,5 +3,5 @@ export class Products {
     PName:string;
     PPrice:number;
     PDescription:string;
-    PImagrUrl:string;
+    PImageUrl:string;
 }
